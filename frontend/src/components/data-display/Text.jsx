@@ -7,6 +7,7 @@ const StyledText = styled.span`
   font-size: ${(props) => `${{ sm: "12px", md: "14px", lg: "16px" }[props.size]}`};
   font-weight: ${(props) => (props.weight === "bold" ? 600 : 400)};
   color: ${(props) => props.color};
+  text-align: ${(props) => props.align};
 `;
 
 function Text({ label, color = COLORS.neutral.black, ...props }) {
@@ -21,7 +22,8 @@ Text.propTypes = {
   size: PropTypes.oneOf(["sm", "md", "lg"]),
   weight: PropTypes.oneOf(["bold", "regular"]),
   label: PropTypes.string.isRequired,
-  color: PropTypes.string
+  color: PropTypes.string,
+  align: PropTypes.oneOf(["left", "center", "right"])
 };
 
 export default Text;
