@@ -4,7 +4,7 @@ import MuiButton from "@mui/material/Button";
 import PropTypes from "prop-types";
 
 const StyledButton = styled(MuiButton)(({ size }) => ({
-  padding: size === "lg" ? "16px 24px 16px 24px" : "4px 8px 4px 8px",
+  padding: size === "lg" ? "12px 50px" : "4px 8px",
   border: "none",
   borderRadius: 4,
   cursor: "pointer",
