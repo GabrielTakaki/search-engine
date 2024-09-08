@@ -30,11 +30,11 @@ const StyledListItemButton = styled(MuiListItemButton)({
   height: 38,
 
   "> .MuiListItemIcon-root": {
-    color: COLORS.primary.lighter
+    color: COLORS.primary.light
   },
 
   "&.Mui-selected": {
-    backgroundColor: COLORS.primary.lighter,
+    backgroundColor: COLORS.primary.light,
     color: COLORS.primary.darkest,
 
     "> .MuiListItemIcon-root": {
