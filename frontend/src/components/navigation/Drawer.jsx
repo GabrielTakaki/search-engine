@@ -33,8 +33,6 @@ function Drawer({ children, header, ...props }) {
 }
 
 Drawer.propTypes = {
-  onClose: PropTypes.func.isRequired,
-  onOpen: PropTypes.func,
   children: PropTypes.node.isRequired,
   isOpen: PropTypes.bool.isRequired,
   header: PropTypes.node
