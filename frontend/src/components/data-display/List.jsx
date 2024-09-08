@@ -28,19 +28,30 @@ const StyledListItemButton = styled(MuiListItemButton)({
   padding: 4,
   width: 38,
   height: 38,
-  backgroundColor: COLORS.primary.lighter
+
+  "> .MuiListItemIcon-root": {
+    color: COLORS.primary.lighter
+  },
+
+  "&.Mui-selected": {
+    backgroundColor: COLORS.primary.lighter,
+    color: COLORS.primary.darkest,
+
+    "> .MuiListItemIcon-root": {
+      color: COLORS.primary.darkest
+    }
+  }
 });
 
 const StyledListItemIcon = styled(ListItemIcon)({
   minWidth: "unset",
   justifyContent: "center",
-  margin: "auto",
-  color: COLORS.primary.darkest
+  margin: "auto"
 });
 
-function ListItemIconButton({ icon }) {
+function ListItemIconButton({ icon, selected }) {
   return (
-    <StyledListItemButton>
+    <StyledListItemButton selected={selected}>
       <StyledListItemIcon>{icon}</StyledListItemIcon>
     </StyledListItemButton>
   );
@@ -54,7 +65,8 @@ List.propTypes = {
 };
 
 ListItemIconButton.propTypes = {
-  icon: PropTypes.node.isRequired
+  icon: PropTypes.node.isRequired,
+  selected: PropTypes.bool
 };
 
 List.ListItemIconButton = ListItemIconButton;
