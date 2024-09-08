@@ -5,7 +5,7 @@ import { COLORS } from "../../consts/colors";
 
 const StyledDisplay = styled.span`
   font-size: ${(props) => `${{ sm: "20px", md: "26px", lg: "28px", xl: "42px" }[props.size]}`};
-  font-weight: ${(props) => (props.weight === "bold" ? 700 : 400)};
+  font-weight: ${(props) => (props.weight === "bold" ? 600 : 400)};
   color: ${(props) => props.color};
 `;
 

@@ -5,7 +5,7 @@ import { COLORS } from "../../consts/colors";
 
 const StyledText = styled.span`
   font-size: ${(props) => `${{ sm: "12px", md: "14px", lg: "16px" }[props.size]}`};
-  font-weight: ${(props) => (props.weight === "bold" ? 700 : 400)};
+  font-weight: ${(props) => (props.weight === "bold" ? 600 : 400)};
   color: ${(props) => props.color};
 `;
 
