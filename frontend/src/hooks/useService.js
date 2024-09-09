@@ -1,36 +1,37 @@
 import { useCallback, useState, useEffect, useRef } from "react";
 
-export default function useService(service, { autoStart = false, params = {}, onData, onError }) {
-  const [isFetching, setIsFetching] = useState(!!autoStart);
+export default function useService(service, { autoStart, params, onData, onError }) {
+  const [isFetching, setIsFetching] = useState(!!autoStart || false);
   const isMounted = useRef(true);
 
-  const start = useCallback(async () => {
-    try {
-      setIsFetching(true);
-      const result = await service(params);
-      if (isMounted.current) {
+  const start = useCallback(
+    async (params) => {
+      try {
+        setIsFetching(true);
+        const result = await service(params);
         onData(result);
+      } catch (error) {
+        if (onError) {
+          onError(error);
+        }
+      } finally {
+        if (isMounted.current) {
+          setIsFetching(false);
+        }
       }
-    } catch (error) {
-      if (isMounted.current && onError) {
-        onError(error);
-      }
-    } finally {
-      if (isMounted.current) {
-        setIsFetching(false);
-      }
-    }
-  }, [service, onData, onError, params]);
+    },
+    [service, params, isMounted]
+  );
 
   useEffect(() => {
     if (autoStart) {
-      start();
+      start(params);
     }
 
     return () => {
       isMounted.current = false;
     };
-  }, [autoStart, start]);
+  }, []);
 
   return [isFetching, start];
 }
