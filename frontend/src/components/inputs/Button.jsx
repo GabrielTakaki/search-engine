@@ -28,7 +28,7 @@ Button.propTypes = {
   variant: PropTypes.oneOf(["ghost", "contained"]),
   label: PropTypes.string.isRequired,
   type: PropTypes.oneOf(["button", "submit"]),
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func
 };
 
 Button.defaultProps = {
