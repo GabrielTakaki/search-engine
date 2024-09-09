@@ -23,7 +23,7 @@ Text.propTypes = {
 };
 
 Text.defaultProps = {
-  size: "sm",
+  size: "md",
   weight: "regular",
   color: COLORS.neutral.black,
   align: "left"
