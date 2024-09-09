@@ -1,7 +1,7 @@
 import { useCallback, useState, useEffect, useRef } from "react";
 
-export default function useService(service, { autoStart, params, onData, onError }) {
-  const [isFetching, setIsFetching] = useState(!!autoStart || false);
+export default function useService(service, { autoStart = true, params, onData, onError }) {
+  const [isFetching, setIsFetching] = useState(autoStart);
   const isMounted = useRef(true);
 
   const start = useCallback(
