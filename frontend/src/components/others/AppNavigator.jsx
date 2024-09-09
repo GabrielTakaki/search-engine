@@ -15,6 +15,12 @@ const ListItemContainer = styled.div`
   margin-bottom: 16px;
 `;
 
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const MENUS = [
   {
     icon: <HomeIcon fontSize="small" />
@@ -43,15 +49,17 @@ const MENUS = [
 function AppNavigator() {
   return (
     <Drawer isOpen header={<img src={BadgeLogo} alt="Court correct badge" />}>
-      <List
-        datasource={MENUS}
-        keyExtractor={(data) => data.icon}
-        renderItems={(data) => (
-          <ListItemContainer>
-            <List.ListItemIconButton selected={data.active} icon={data.icon} />
-          </ListItemContainer>
-        )}
-      />
+      <Container>
+        <List
+          datasource={MENUS}
+          keyExtractor={(data) => data.icon}
+          renderItems={(data) => (
+            <ListItemContainer>
+              <List.ListItemIconButton selected={data.active} icon={data.icon} />
+            </ListItemContainer>
+          )}
+        />
+      </Container>
     </Drawer>
   );
 }
