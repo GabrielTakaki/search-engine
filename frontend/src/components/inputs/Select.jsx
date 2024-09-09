@@ -40,12 +40,14 @@ function Select({ options, ...props }) {
 Select.propTypes = {
   options: PropTypes.arrayOf(
     PropTypes.shape({
-      label: PropTypes.string,
-      value: PropTypes.string
+      label: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     })
   ).isRequired,
+  defaultValue: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
   onChange: PropTypes.func,
   value: PropTypes.string,
+  name: PropTypes.string,
   placeholder: PropTypes.string
 };
 
