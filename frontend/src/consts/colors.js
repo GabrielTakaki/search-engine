@@ -1,7 +1,8 @@
 export const COLORS = {
   primary: {
-    lightest: "#E4F6ED",
-    lighter: "#BDE9D2",
+    lightest: "#F7FCFA",
+    lighter: "#E4F6ED",
+    light: "#BDE9D2",
     default: "#26C281",
     darkest: "#008347"
   },
