@@ -15,9 +15,9 @@ const StyledButton = styled(MuiButton)(({ size }) => ({
   }
 }));
 
-function Button({ size = "sm", variant = "contained", label, onClick }) {
+function Button({ size, type, variant, label, onClick }) {
   return (
-    <StyledButton variant={variant} size={size} onClick={onClick}>
+    <StyledButton type={type} variant={variant} size={size} onClick={onClick}>
       {label}
     </StyledButton>
   );
@@ -27,7 +27,14 @@ Button.propTypes = {
   size: PropTypes.oneOf(["sm", "lg"]),
   variant: PropTypes.oneOf(["ghost", "contained"]),
   label: PropTypes.string.isRequired,
+  type: PropTypes.oneOf(["button", "submit"]),
   onClick: PropTypes.func.isRequired
+};
+
+Button.defaultProps = {
+  size: "sm",
+  type: "button",
+  variant: "contained"
 };
 
 export default Button;
