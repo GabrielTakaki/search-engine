@@ -36,9 +36,6 @@ class ComplaintsService:
 
         paginated_data = complaints[start:end]
 
-        if start >= total_items:
-            raise HTTPException(status_code=404, detail="Page not found")
-
         return {
             "data": paginated_data,
             "total": total_items,
