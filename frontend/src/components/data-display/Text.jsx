@@ -10,12 +10,8 @@ const StyledText = styled.span`
   text-align: ${(props) => props.align};
 `;
 
-function Text({ label, color = COLORS.neutral.black, ...props }) {
-  return (
-    <StyledText {...props} color={color}>
-      {label}
-    </StyledText>
-  );
+function Text({ label, ...props }) {
+  return <StyledText {...props}>{label}</StyledText>;
 }
 
 Text.propTypes = {
@@ -24,6 +20,13 @@ Text.propTypes = {
   label: PropTypes.string.isRequired,
   color: PropTypes.string,
   align: PropTypes.oneOf(["left", "center", "right"])
+};
+
+Text.defaultProps = {
+  size: "sm",
+  weight: "regular",
+  color: COLORS.neutral.black,
+  align: "left"
 };
 
 export default Text;

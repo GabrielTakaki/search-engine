@@ -10,12 +10,8 @@ const StyledDisplay = styled.span`
   text-align: ${(props) => props.align};
 `;
 
-function Display({ label, color = COLORS.neutral.black, ...props }) {
-  return (
-    <StyledDisplay {...props} color={color}>
-      {label}
-    </StyledDisplay>
-  );
+function Display({ label, ...props }) {
+  return <StyledDisplay {...props}>{label}</StyledDisplay>;
 }
 
 Display.propTypes = {
@@ -24,6 +20,13 @@ Display.propTypes = {
   label: PropTypes.string.isRequired,
   align: PropTypes.oneOf(["left", "center", "right"]),
   color: PropTypes.string
+};
+
+Display.defaultProps = {
+  size: "sm",
+  weight: "regular",
+  align: "left",
+  color: COLORS.neutral.black
 };
 
 export default Display;
