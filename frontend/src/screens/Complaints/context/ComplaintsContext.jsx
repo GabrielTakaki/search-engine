@@ -2,21 +2,32 @@ import React, { createContext, useCallback, useContext, useEffect, useMemo, useS
 import useService from "../../../hooks/useService";
 import { getComplaints } from "../services/getComplaints";
 import PropTypes from "prop-types";
+import dayjs from "dayjs";
+
+function normalizeData(data) {
+  return data.reduce(
+    (acc, item) => {
+      acc.ids.push(item.id);
+      acc.entities[item.id] = item;
+      return acc;
+    },
+    { ids: [], entities: {} }
+  );
+}
 
 const ComplaintsContext = createContext(null);
 
 function ComplaintsProvider({ children }) {
-  const [complaints, setComplaints] = useState();
   const searchParams = new URLSearchParams(window.location.search);
+
+  const [complaints, setComplaints] = useState({ ids: [], entities: {} });
   const [pagination, setPagination] = useState({ page: 1, perPage: 5, total: 0, totalPages: 0 });
 
   const [isFetchingComplaints, fetchComplaints] = useService(getComplaints, {
     autoStart: false,
     onData: ({ data, total }) => {
-      if (total !== pagination.total) {
-        setPagination((prev) => ({ ...prev, total, totalPages: Math.ceil(total / prev.perPage) }));
-      }
-      setComplaints(data);
+      setPagination((prev) => ({ ...prev, total, totalPages: Math.ceil(total / prev.perPage) }));
+      setComplaints(normalizeData(data));
     }
   });
 
@@ -43,14 +54,18 @@ function ComplaintsProvider({ children }) {
     const category = searchParams.get("category");
     const company = searchParams.get("company");
     const decision = searchParams.get("decision");
+    const date = searchParams.get("date")
+      ? dayjs.utc(searchParams.get("date")).format("YYYY-MM-DD")
+      : "";
 
-    fetchComplaints({
+    handleFetchComplaints({
       page: pagination.page,
       perPage: pagination.perPage,
       ...(title && { title }),
       ...(company && { company }),
       ...(category && { category }),
-      ...(decision && { decision })
+      ...(decision && { decision }),
+      ...(date && { date })
     });
   }, [pagination.page, pagination.perPage]);
 
@@ -63,7 +78,7 @@ function ComplaintsProvider({ children }) {
       handlePaginationChange,
       handlePerPageChange
     };
-  }, [complaints]);
+  }, [complaints, pagination, isFetchingComplaints]);
 
   return <ComplaintsContext.Provider value={value}>{children}</ComplaintsContext.Provider>;
 }

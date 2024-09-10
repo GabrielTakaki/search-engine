@@ -6,7 +6,7 @@ import Display from "../../../components/data-display/Display";
 import Text from "../../../components/data-display/Text";
 import { COLORS } from "../../../consts/colors";
 import Select from "../../../components/inputs/Select";
-import Divider from "../../../components/data-display/Divider";
+import ComplaintsListItem from "./ComplaintsListItem";
 
 const Container = styled.div`
   display: flex;
@@ -21,16 +21,12 @@ const ListHeaderContainer = styled.div`
 const Column = styled.div`
   display: flex;
   gap: ${(props) => props.gap || "10px"};
+  width: ${(props) => props.width};
   flex-direction: column;
 `;
 const Row = styled.div`
   display: flex;
   gap: ${(props) => props.gap || "10px"};
-`;
-const SpaceBetween = styled.div`
-  display: flex;
-  max-width: 900px;
-  justify-content: space-between;
 `;
 
 function ComplaintsList() {
@@ -42,7 +38,7 @@ function ComplaintsList() {
         <Column>
           <Display label="Results" weight="bold" size="lg" />
           <Text
-            color={COLORS.neutral.gray}
+            color={COLORS.neutral[500]}
             label={`Showing results of ${pagination.page} of ${pagination.totalPages} of ${pagination.total}`}
           />
         </Column>
@@ -57,36 +53,24 @@ function ComplaintsList() {
             ]}
             defaultValue={pagination.perPage}
           />
+          <Select
+            options={[
+              { value: "title", label: "Title" },
+              { value: "date", label: "Date" },
+              { value: "category", label: "Category" },
+              { value: "decision", label: "Decision" },
+              { value: "company", label: "Company" }
+            ]}
+            placeholder="Sort by"
+          />
         </Row>
       </ListHeaderContainer>
       <List
         pagination={pagination}
-        datasource={complaints || []}
+        datasource={complaints.ids || []}
         onChange={handlePaginationChange}
-        renderItems={(data) => (
-          <>
-            <Column gap="20px">
-              <Display label={data.title} color={COLORS.primary.default} size="md" />
-              <Text label={data.description} color={COLORS.neutral.gray} />
-              <SpaceBetween>
-                <Column>
-                  <Text label="Category" size="sm" />
-                  <Text label={data.category} size="sm" weight="bold" />
-                </Column>
-                <Column>
-                  <Text label="Decision" size="sm" />
-                  <Text label={data.decision} size="sm" weight="bold" />
-                </Column>
-                <Column>
-                  <Text label="Company" size="sm" />
-                  <Text label={data.company} size="sm" weight="bold" />
-                </Column>
-              </SpaceBetween>
-            </Column>
-            <Divider size="lg" />
-          </>
-        )}
-        keyExtractor={(data) => data.id}
+        renderItems={(id) => <ComplaintsListItem complaintId={id} />}
+        keyExtractor={(id) => id}
       />
     </Container>
   );
