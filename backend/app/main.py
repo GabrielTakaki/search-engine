@@ -2,7 +2,7 @@ from fastapi import FastAPI
 import uvicorn
 from starlette.middleware.cors import CORSMiddleware
 
-from backend.src.endpoints.routes import app as api_router
+from backend.app.endpoints.routes import app as api_router
 
 class AppCreator:
     def __init__(self):

@@ -1,6 +1,7 @@
 from http.client import HTTPException
-from typing import List, Dict, Optional, Union
-from backend.src.repository.complaints import ComplaintsRepository
+from typing import Optional, Union
+from backend.app.repository.complaints import ComplaintsRepository
+from datetime import datetime
 
 class ComplaintsService:
     def __init__(self, repository: ComplaintsRepository):
@@ -21,13 +22,14 @@ class ComplaintsService:
         if title:
             complaints = [c for c in complaints if title.lower() in c.get('title', '').lower()]
         if company:
-            complaints = [c for c in complaints if company.lower() in c.get('company', '').lower()]
+            complaints = [c for c in complaints if c.get('company', '').lower() == company.lower()]
         if decision:
-            complaints = [c for c in complaints if decision.lower() in c.get('decision', '').lower()]
+            complaints = [c for c in complaints if c.get('decision', '').lower() == decision.lower()]
         if date:
-            complaints = [c for c in complaints if date in c.get('date', '')]
+            date_obj = datetime.fromisoformat(date)
+            complaints = [c for c in complaints if datetime.fromisoformat(c.get('date', '')) == date_obj]
         if category:
-            complaints = [c for c in complaints if category.lower() in c.get('category', '').lower()]
+            complaints = [c for c in complaints if c.get('category', '').lower() == category.lower()]
 
         total_items = len(complaints)
 

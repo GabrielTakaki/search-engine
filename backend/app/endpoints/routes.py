@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from backend.src.endpoints.complaints import router as complaints_router
+from backend.app.endpoints.complaints import router as complaints_router
 
 app = APIRouter()
 router_list = [complaints_router]

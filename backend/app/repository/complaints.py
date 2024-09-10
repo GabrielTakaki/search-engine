@@ -4,7 +4,7 @@ from typing import List, Dict
 
 class ComplaintsRepository:
     def __init__(self):
-        self.mock_file_path = os.path.join(os.getcwd().split("src")[0], 'mock', 'complaints.json')
+        self.mock_file_path = os.path.join(os.getcwd().split("app")[0], 'mock', 'complaints.json')
 
     def _load_data(self) -> List[Dict]:
         print(f"Mock file path: {self.mock_file_path}")

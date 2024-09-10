@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from fastapi.params import Query
-from backend.src.repository.complaints import ComplaintsRepository
-from backend.src.service.complaints import ComplaintsService
+from backend.app.repository.complaints import ComplaintsRepository
+from backend.app.service.complaints import ComplaintsService
 
 repository = ComplaintsRepository()
 service = ComplaintsService(repository)
