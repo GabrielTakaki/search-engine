@@ -8,16 +8,13 @@ const StyledDivider = styled(MuiDivider)`
   margin: ${({ size }) => ({ sm: "10px 0", md: "20px 0", lg: "30px 0" })[size]} !important;
 `;
 
-function Divider({ size }) {
-  return <StyledDivider size={size} color={COLORS.neutral.gray} />;
+function Divider({ size = "md", color = COLORS.neutral[500] }) {
+  return <StyledDivider size={size} color={color} />;
 }
 
 Divider.propTypes = {
-  size: PropTypes.oneOf(["sm", "md", "lg"])
-};
-
-Divider.defaultProps = {
-  size: "md"
+  size: PropTypes.oneOf(["sm", "md", "lg"]),
+  color: PropTypes.string
 };
 
 export default Divider;

@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import MuiDrawer from "@mui/material/Drawer";
 import { styled } from "@mui/material/styles";
+import { COLORS } from "../../consts/colors";
 
 const drawerWidth = 102;
 
@@ -19,7 +20,8 @@ const StyledDrawer = styled(MuiDrawer)(() => ({
   boxSizing: "border-box",
   "& .MuiDrawer-paper": {
     width: drawerWidth,
-    alignItems: "center"
+    alignItems: "center",
+    borderRight: `1px solid ${COLORS.primary[100]}`
   }
 }));
 

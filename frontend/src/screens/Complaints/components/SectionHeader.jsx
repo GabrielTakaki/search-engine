@@ -16,13 +16,13 @@ function SectionHeader() {
         label="AI-Powered Regulatory Search"
         size="xl"
         align="center"
-        color={COLORS.neutral.black}
+        color={COLORS.neutral[900]}
         weight="bold"
       />
       <Display
         size="sm"
         align="center"
-        color={COLORS.neutral.gray}
+        color={COLORS.neutral[500]}
         label="Use the search engine to search for publications from courts and regulators."
       />
     </Container>

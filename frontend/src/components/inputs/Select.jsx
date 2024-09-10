@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import MuiSelect from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
@@ -11,7 +11,7 @@ const StyledSelect = styled(MuiSelect)`
   .MuiSelect-select {
     border-radius: 8px;
     padding: 12px 24px 12px 16px;
-    border: 1px solid ${COLORS.neutral.lightGray};
+    border: 1px solid ${COLORS.neutral[300]};
 
     &:focus {
       border-radius: 8px;
@@ -25,9 +25,27 @@ const StyledSelect = styled(MuiSelect)`
   }
 `;
 
-function Select({ options, ...props }) {
+function Select({ options, onClearHandled, onChange, value, clear, defaultValue, ...props }) {
+  const [selectedValue, setSelectedValue] = useState(value || defaultValue || "");
+
+  useEffect(() => {
+    if (clear) {
+      setSelectedValue(defaultValue || "");
+      if (onClearHandled) {
+        onClearHandled();
+      }
+    }
+  }, [clear, onClearHandled]);
+
+  const handleChange = (event) => {
+    setSelectedValue(event.target.value);
+    if (onChange) {
+      onChange(event);
+    }
+  };
+
   return (
-    <StyledSelect {...props}>
+    <StyledSelect value={selectedValue} onChange={handleChange} {...props}>
       {options?.map((option) => (
         <MenuItem key={option.value} value={option.value}>
           {option.label}
@@ -48,7 +66,9 @@ Select.propTypes = {
   onChange: PropTypes.func,
   value: PropTypes.string,
   name: PropTypes.string,
-  placeholder: PropTypes.string
+  placeholder: PropTypes.string,
+  clear: PropTypes.bool,
+  onClearHandled: PropTypes.func
 };
 
 export default Select;

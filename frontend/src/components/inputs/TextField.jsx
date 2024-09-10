@@ -10,7 +10,7 @@ const StyledTextField = styled(MuiTextField)`
   .MuiOutlinedInput-root {
     border-radius: 8px;
     padding: 12px 24px 12px 16px;
-    border: 1px solid ${COLORS.neutral.lightGray};
+    border: 1px solid ${COLORS.neutral[300]};
 
     > input {
       padding: 0;
@@ -18,13 +18,14 @@ const StyledTextField = styled(MuiTextField)`
   }
 `;
 
-function TextField({ icon, ...props }) {
-  const coloredIcon = React.cloneElement(icon, { style: { color: COLORS.neutral.gray } });
+function TextField({ icon = <SearchOutlinedIcon />, placeholder = "Search", ...props }) {
+  const coloredIcon = React.cloneElement(icon, { style: { color: COLORS.neutral[500] } });
 
   return (
     <StyledTextField
       type="text"
       fullWidth
+      placeholder={placeholder}
       InputProps={
         icon
           ? {
@@ -44,11 +45,6 @@ TextField.propTypes = {
   value: PropTypes.string,
   placeholder: PropTypes.string,
   name: PropTypes.string
-};
-
-TextField.defaultProps = {
-  icon: <SearchOutlinedIcon />,
-  placeholder: "Search"
 };
 
 export default TextField;

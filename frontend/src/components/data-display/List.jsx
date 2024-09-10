@@ -7,6 +7,7 @@ import MuiListItemButton from "@mui/material/ListItemButton";
 import { styled } from "styled-components";
 import { COLORS } from "../../consts/colors";
 import Pagination from "../navigation/Pagination";
+import Text from "./Text";
 
 const Container = styled.div`
   display: flex;
@@ -33,17 +34,23 @@ function List({ datasource, keyExtractor, renderItems, renderAction, pagination,
   return (
     <Container>
       <MuiList>
-        {datasource.map((data) => (
-          <ListItem
-            secondaryAction={renderAction?.(data)}
-            key={keyExtractor(data)}
-            disablePadding
-            sx={{ display: "block" }}>
-            {renderItems(data)}
+        {datasource.length ? (
+          datasource.map((data) => (
+            <ListItem
+              secondaryAction={renderAction?.(data)}
+              key={keyExtractor(data)}
+              disablePadding
+              sx={{ display: "block" }}>
+              {renderItems(data)}
+            </ListItem>
+          ))
+        ) : (
+          <ListItem sx={{ display: "flex", justifyContent: "center" }}>
+            <Text label="No data found" size="lg" color={COLORS.neutral[500]} />
           </ListItem>
-        ))}
+        )}
       </MuiList>
-      {pagination && (
+      {pagination && !!datasource.length && (
         <PaginationWrapper>
           <Pagination onChange={handlePageChange} count={pagination.totalPages} />
         </PaginationWrapper>
@@ -59,15 +66,15 @@ const StyledListItemButton = styled(MuiListItemButton)`
   height: 38px !important;
 
   > .MuiListItemIcon-root {
-    color: ${COLORS.primary.light};
+    color: ${COLORS.primary[300]};
   }
 
   &.Mui-selected {
-    background-color: ${COLORS.primary.light};
-    color: ${COLORS.primary.darkest};
+    background-color: ${COLORS.primary[300]};
+    color: ${COLORS.primary[900]};
 
     > .MuiListItemIcon-root {
-      color: ${COLORS.primary.darkest};
+      color: ${COLORS.primary[900]};
     }
   }
 `;

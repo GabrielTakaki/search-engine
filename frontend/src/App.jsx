@@ -4,14 +4,17 @@ import { COLORS } from "./consts/colors";
 import AppNavigator from "./components/others/AppNavigator";
 import Footer from "./components/others/Footer";
 import Complaints from "./screens/Complaints/screens/Complaints";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import Header from "./components/others/Header";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: COLORS.primary.default,
-      light: COLORS.primary.light,
-      dark: COLORS.primary.darkest,
-      contrastText: COLORS.neutral.white
+      main: COLORS.primary[500],
+      light: COLORS.primary[300],
+      dark: COLORS.primary[900],
+      contrastText: COLORS.neutral[50]
     }
   },
   components: {
@@ -20,7 +23,7 @@ const theme = createTheme({
         {
           props: { variant: "ghost" },
           style: {
-            color: COLORS.primary.darkest
+            color: COLORS.primary[900]
           }
         }
       ]
@@ -48,15 +51,18 @@ const MainContent = styled.main`
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <PageContainer>
-        <MainWrapper>
-          <AppNavigator />
-          <MainContent>
-            <Complaints />
-          </MainContent>
-        </MainWrapper>
-        <Footer />
-      </PageContainer>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <PageContainer>
+          <Header />
+          <MainWrapper>
+            <AppNavigator />
+            <MainContent>
+              <Complaints />
+            </MainContent>
+          </MainWrapper>
+          <Footer />
+        </PageContainer>
+      </LocalizationProvider>
     </ThemeProvider>
   );
 }
