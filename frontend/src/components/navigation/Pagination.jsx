@@ -12,17 +12,17 @@ const StyledPagination = styled(MuiPagination)`
   }
   .MuiPagination-ul li:first-child button {
     border-radius: 4px 0 0 4px;
-    border: 1px solid ${COLORS.neutral.lightGray};
+    border: 1px solid ${COLORS.neutral[300]};
   }
   .MuiPagination-ul li:last-child button {
     border-radius: 0 4px 4px 0;
-    border: 1px solid ${COLORS.neutral.lightGray};
+    border: 1px solid ${COLORS.neutral[300]};
   }
 
   .Mui-selected,
   .MuiButtonBase-root:hover {
     background-color: transparent !important;
-    color: ${COLORS.primary.default};
+    color: ${COLORS.primary[500]};
   }
 `;
 
