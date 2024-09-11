@@ -15,9 +15,7 @@ export default function useService(service, { autoStart = true, params, onData, 
           onError(error);
         }
       } finally {
-        if (isMounted.current) {
-          setIsFetching(false);
-        }
+        setIsFetching(false);
       }
     },
     [service, params, isMounted]
