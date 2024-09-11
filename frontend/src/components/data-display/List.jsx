@@ -8,6 +8,7 @@ import { styled } from "styled-components";
 import { COLORS } from "../../consts/colors";
 import Pagination from "../navigation/Pagination";
 import Text from "./Text";
+import Loading from "../feedback/Loading";
 
 const Container = styled.div`
   display: flex;
@@ -23,7 +24,15 @@ const PaginationWrapper = styled.div`
   justify-content: center;
 `;
 
-function List({ datasource, keyExtractor, renderItems, renderAction, pagination, onChange }) {
+function List({
+  datasource,
+  keyExtractor,
+  loading,
+  renderItems,
+  renderAction,
+  pagination,
+  onChange
+}) {
   const handlePageChange = useCallback(
     (page) => {
       onChange?.(page);
@@ -31,6 +40,9 @@ function List({ datasource, keyExtractor, renderItems, renderAction, pagination,
     [onChange]
   );
 
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <Container>
       <MuiList>
@@ -97,6 +109,7 @@ List.propTypes = {
   datasource: PropTypes.array.isRequired,
   renderItems: PropTypes.func.isRequired,
   renderAction: PropTypes.func,
+  loading: PropTypes.bool,
   onChange: PropTypes.func,
   pagination: PropTypes.shape({
     page: PropTypes.number.isRequired,
