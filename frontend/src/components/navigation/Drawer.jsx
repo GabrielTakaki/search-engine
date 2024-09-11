@@ -25,9 +25,9 @@ const StyledDrawer = styled(MuiDrawer)(() => ({
   }
 }));
 
-function Drawer({ children, header, ...props }) {
+function Drawer({ children, header, isOpen }) {
   return (
-    <StyledDrawer {...props} variant="permanent" anchor="left">
+    <StyledDrawer open={isOpen} variant="permanent" anchor="left">
       {header && <DrawerHeader>{header}</DrawerHeader>}
       {children}
     </StyledDrawer>
