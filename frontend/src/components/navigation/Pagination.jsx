@@ -26,12 +26,20 @@ const StyledPagination = styled(MuiPagination)`
   }
 `;
 
-function Pagination({ count, onChange }) {
-  return <StyledPagination onChange={(_, page) => onChange(page)} shape="rounded" count={count} />;
+function Pagination({ count, onChange, page }) {
+  return (
+    <StyledPagination
+      page={page}
+      onChange={(_, page) => onChange(page)}
+      shape="rounded"
+      count={count}
+    />
+  );
 }
 
 Pagination.propTypes = {
   count: PropTypes.number.isRequired,
+  page: PropTypes.number,
   onChange: PropTypes.func.isRequired
 };
 
