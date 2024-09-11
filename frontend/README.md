@@ -3,7 +3,7 @@
 
 This project uses the react UI library Material Design that contains a set of high quality components and demos for building rich, interactive user interfaces.
 
-[https://ant.design/components/overview/](https://mui.com/)
+[https://mui.com/material-ui/](https://mui.com/)
 
 > **NOTE**: All Material UI components must be wrapped with a custom component with the same name before using it. Thats because if it is necessary in the future to make a change in the behavior or appearance of any component of the library, the change must be made only in one place instead of having to change everywhere that the component of the library is being used.
 
@@ -63,7 +63,7 @@ src/
 
 #### Shared Components
 
-For shared components, the folder structure follows the same category division that Material UI separates on its components page. Please follow their model: [https://ant.design/components/overview/](https://mui.com/material-ui/all-components/).
+For shared components, the folder structure follows the same category division that Material UI separates on its components page. Please follow their model: [https://mui.com/material-ui/all-components/](https://mui.com/material-ui/all-components/).
 
 ```
 src/
