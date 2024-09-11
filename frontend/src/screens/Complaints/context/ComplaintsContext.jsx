@@ -19,9 +19,22 @@ const ComplaintsContext = createContext(null);
 
 function ComplaintsProvider({ children }) {
   const searchParams = new URLSearchParams(window.location.search);
+  const title = searchParams.get("title");
+  const category = searchParams.get("category");
+  const company = searchParams.get("company");
+  const decision = searchParams.get("decision");
+  const date = searchParams.get("date")
+    ? dayjs.utc(searchParams.get("date")).format("YYYY-MM-DD")
+    : "";
 
   const [complaints, setComplaints] = useState({ ids: [], entities: {} });
-  const [pagination, setPagination] = useState({ page: 1, perPage: 5, total: 0, totalPages: 0 });
+  const [pagination, setPagination] = useState({
+    page: 1,
+    perPage: 5,
+    total: 0,
+    totalPages: 0,
+    sortBy: ""
+  });
 
   const [isFetchingComplaints, fetchComplaints] = useService(getComplaints, {
     autoStart: false,
@@ -31,52 +44,50 @@ function ComplaintsProvider({ children }) {
     }
   });
 
-  const handleFetchComplaints = useCallback((props) => {
-    fetchComplaints(props);
+  const handleFetchComplaints = useCallback(
+    (props) => {
+      fetchComplaints({
+        title,
+        company,
+        category,
+        decision,
+        date,
+        ...props,
+        sortBy: pagination.sortBy
+      });
+    },
+    [title, category, decision, date, category, pagination.sortBy]
+  );
+
+  const handlePaginationChange = useCallback((page) => {
+    setPagination((prev) => ({ ...prev, page }));
   }, []);
 
-  const handlePaginationChange = useCallback(
-    (page) => {
-      setPagination((prev) => ({ ...prev, page }));
-    },
-    [pagination.total]
-  );
+  const handlePerPageChange = useCallback((perPage) => {
+    setPagination((prev) => ({ ...prev, perPage }));
+  }, []);
 
-  const handlePerPageChange = useCallback(
-    (perPage) => {
-      setPagination((prev) => ({ ...prev, perPage }));
-    },
-    [pagination.total]
-  );
+  const handleSortingChange = useCallback((sortBy) => {
+    setPagination((prev) => ({ ...prev, sortBy }));
+  }, []);
 
   useEffect(() => {
-    const title = searchParams.get("title");
-    const category = searchParams.get("category");
-    const company = searchParams.get("company");
-    const decision = searchParams.get("decision");
-    const date = searchParams.get("date")
-      ? dayjs.utc(searchParams.get("date")).format("YYYY-MM-DD")
-      : "";
-
     handleFetchComplaints({
       page: pagination.page,
       perPage: pagination.perPage,
-      ...(title && { title }),
-      ...(company && { company }),
-      ...(category && { category }),
-      ...(decision && { decision }),
-      ...(date && { date })
+      sortBy: pagination.sortBy
     });
-  }, [pagination.page, pagination.perPage]);
+  }, [pagination.page, pagination.perPage, pagination.sortBy]);
 
   const value = useMemo(() => {
     return {
       complaints,
       loading: isFetchingComplaints,
-      fetchComplaints: handleFetchComplaints,
       pagination,
       handlePaginationChange,
-      handlePerPageChange
+      handleFetchComplaints,
+      handlePerPageChange,
+      handleSortingChange
     };
   }, [complaints, pagination, isFetchingComplaints]);
 

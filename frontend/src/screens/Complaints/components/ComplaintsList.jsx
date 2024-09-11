@@ -30,7 +30,13 @@ const Row = styled.div`
 `;
 
 function ComplaintsList() {
-  const { complaints, pagination, handlePaginationChange, handlePerPageChange } = useComplaints();
+  const {
+    complaints,
+    pagination,
+    handlePaginationChange,
+    handlePerPageChange,
+    handleSortingChange
+  } = useComplaints();
 
   return (
     <Container>
@@ -54,6 +60,7 @@ function ComplaintsList() {
             defaultValue={pagination.perPage}
           />
           <Select
+            onChange={(e) => handleSortingChange(e.target.value)}
             options={[
               { value: "title", label: "Title" },
               { value: "date", label: "Date" },

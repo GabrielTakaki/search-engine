@@ -21,25 +21,28 @@ const Row = styled.div`
 `;
 
 function ComplaintsFilters() {
-  const { fetchComplaints } = useComplaints();
+  const { handleFetchComplaints, pagination } = useComplaints();
   const formRef = useRef(null);
   const searchParams = new URLSearchParams(window.location.search);
 
   const [clearFilters, setClearFilters] = useState(false);
 
-  const handleSubmitFilter = useCallback((values) => {
-    Object.keys(values).forEach((key) => {
-      if (values[key]) {
-        searchParams.set(key, values[key]);
-      } else {
-        searchParams.delete(key);
-      }
-    });
-    const newUrl = `${window.location.pathname}?${searchParams.toString()}`;
-    window.history.pushState({}, "", newUrl);
+  const handleSubmitFilter = useCallback(
+    (values) => {
+      Object.keys(values).forEach((key) => {
+        if (values[key]) {
+          searchParams.set(key, values[key]);
+        } else {
+          searchParams.delete(key);
+        }
+      });
+      const newUrl = `${window.location.pathname}?${searchParams.toString()}`;
+      window.history.pushState({}, "", newUrl);
 
-    fetchComplaints(values);
-  }, []);
+      handleFetchComplaints(values);
+    },
+    [pagination.sortBy]
+  );
 
   const handleClearFilters = useCallback(() => {
     if (formRef.current) {
