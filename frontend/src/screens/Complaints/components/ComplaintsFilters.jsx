@@ -80,10 +80,8 @@ function ComplaintsFilters() {
             placeholder="Category"
             onClearHandled={handleClearComplete}
             clear={clearFilters}
-            defaultValue=""
           />
           <Select
-            defaultValue=""
             placeholder="Decision"
             name="decision"
             clear={clearFilters}
@@ -97,7 +95,6 @@ function ComplaintsFilters() {
           <Select
             placeholder="Company"
             name="company"
-            defaultValue=""
             clear={clearFilters}
             options={[
               { label: "-", value: "" },

@@ -20,13 +20,12 @@ const ListHeaderContainer = styled.div`
 `;
 const Column = styled.div`
   display: flex;
-  gap: ${(props) => props.gap || "10px"};
-  width: ${(props) => props.width};
+  gap: 10px;
   flex-direction: column;
 `;
 const Row = styled.div`
   display: flex;
-  gap: ${(props) => props.gap || "10px"};
+  gap: 10px;
 `;
 
 function ComplaintsList() {
@@ -57,7 +56,6 @@ function ComplaintsList() {
               { value: 15, label: "15 per page" },
               { value: 20, label: "20 per page" }
             ]}
-            defaultValue={pagination.perPage}
           />
           <Select
             onChange={(e) => handleSortingChange(e.target.value)}

@@ -23,25 +23,32 @@ const Container = styled.div`
 
 const MENUS = [
   {
+    key: 1,
     icon: <HomeIcon fontSize="small" />
   },
   {
+    key: 2,
     icon: <BusinessCenterOutlinedIcon fontSize="small" />
   },
   {
+    key: 3,
     icon: <PermContactCalendarOutlinedIcon fontSize="small" />
   },
   {
+    key: 4,
     icon: <TextSnippetOutlinedIcon fontSize="small" />
   },
   {
+    key: 5,
     active: true,
     icon: <SearchOutlinedIcon fontSize="small" />
   },
   {
+    key: 6,
     icon: <SettingsOutlinedIcon fontSize="small" />
   },
   {
+    key: 7,
     icon: <HelpOutlineOutlinedIcon fontSize="small" />
   }
 ];
@@ -52,7 +59,7 @@ function AppNavigator() {
       <Container>
         <List
           datasource={MENUS}
-          keyExtractor={(data) => data.icon}
+          keyExtractor={(data) => data.key}
           renderItems={(data) => (
             <ListItemContainer>
               <List.ListItemIconButton selected={data.active} icon={data.icon} />
