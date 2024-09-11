@@ -1,182 +1,344 @@
 [
   {
     "id": "b8a3b9d8-8f8a-4a79-8371-2354c88c3409",
-    "date": "2022-11-18T00:00:00Z",
+    "date": "2022-11-18",
     "title": "Title Hotlink",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     "category": "Banking",
     "decision": "Upheld",
     "company": "Barclays Bank Plc"
   },
   {
     "id": "c27b4cd5-507f-45ef-9d66-9c42e71b530f",
-    "date": "2022-12-05T00:00:00Z",
+    "date": "2022-12-05",
     "title": "Title Example",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     "category": "Insurance",
     "decision": "Dismissed",
     "company": "Axa Insurance Ltd"
   },
   {
     "id": "6742b223-fbbf-4ec9-9364-c4e6c59743bc",
-    "date": "2023-01-15T00:00:00Z",
+    "date": "2023-01-15",
     "title": "Another Title",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     "category": "Telecommunications",
     "decision": "Upheld",
     "company": "Vodafone Group"
   },
   {
     "id": "ff7e1a3f-158e-45f4-95cb-ec28b30226e3",
-    "date": "2023-02-02T00:00:00Z",
+    "date": "2023-02-02",
     "title": "Consumer Report",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     "category": "Retail",
     "decision": "Upheld",
     "company": "Amazon"
   },
   {
     "id": "623d6ba1-6b27-4487-8bcb-46a5dfced3cc",
-    "date": "2023-03-10T00:00:00Z",
+    "date": "2023-03-10",
     "title": "Service Complaint",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     "category": "Utilities",
     "decision": "Dismissed",
     "company": "British Gas"
   },
   {
     "id": "4fe5a0d8-1ae5-487e-baff-47e370ff1f4d",
-    "date": "2023-04-18T00:00:00Z",
+    "date": "2023-04-18",
     "title": "Legal Issue",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     "category": "Legal",
     "decision": "Upheld",
     "company": "Legal & General"
   },
   {
     "id": "9e2e5c76-2643-40b0-9c37-97c29deba47f",
-    "date": "2023-05-24T00:00:00Z",
+    "date": "2023-05-24",
     "title": "Technical Glitch",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     "category": "Technology",
     "decision": "Upheld",
-    "company": "Apple Inc"
+    "company": "Apple"
   },
   {
     "id": "ca927bc7-7d35-4f80-9d6a-40f0c92b7681",
-    "date": "2023-06-11T00:00:00Z",
+    "date": "2023-06-11",
     "title": "Delayed Service",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     "category": "Transport",
     "decision": "Upheld",
     "company": "National Rail"
   },
   {
     "id": "b1b7f898-2d5d-48db-8596-13af22a81598",
-    "date": "2023-07-01T00:00:00Z",
+    "date": "2023-07-01",
     "title": "Bank Charges Dispute",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     "category": "Banking",
     "decision": "Dismissed",
     "company": "HSBC"
   },
   {
     "id": "fe123ea6-14e7-480b-b34c-bb1d5219a49d",
-    "date": "2023-08-20T00:00:00Z",
+    "date": "2023-08-20",
     "title": "Insurance Fraud",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     "category": "Insurance",
     "decision": "Upheld",
     "company": "Allianz"
   },
   {
     "id": "f39d9d35-bb8f-48c0-b558-28069d3fbb62",
-    "date": "2023-09-12T00:00:00Z",
+    "date": "2023-09-12",
     "title": "Billing Error",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     "category": "Telecommunications",
     "decision": "Upheld",
     "company": "AT&T"
   },
   {
     "id": "63f2c1b2-c3d7-4694-b472-98ff4f021e33",
-    "date": "2023-10-05T00:00:00Z",
+    "date": "2023-10-05",
     "title": "Shipping Delay",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     "category": "Retail",
     "decision": "Dismissed",
     "company": "eBay"
   },
   {
     "id": "fa3c4160-1c85-4410-bf15-c92022536ec3",
-    "date": "2023-11-17T00:00:00Z",
+    "date": "2023-11-17",
     "title": "Payment Dispute",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     "category": "Finance",
     "decision": "Upheld",
     "company": "PayPal"
   },
   {
     "id": "be62fd24-64f4-41d7-840e-0dfbf4da7503",
-    "date": "2023-12-08T00:00:00Z",
+    "date": "2023-12-08",
     "title": "Customer Service Issue",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     "category": "Customer Support",
     "decision": "Dismissed",
     "company": "Uber"
   },
   {
     "id": "f8da73d3-6ff9-4684-8823-8f74821c65c6",
-    "date": "2024-01-15T00:00:00Z",
+    "date": "2024-01-15",
     "title": "Product Defect",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     "category": "Manufacturing",
     "decision": "Upheld",
     "company": "Samsung"
   },
   {
     "id": "96f95e0b-ea25-4e12-8393-fb3186cb52c9",
-    "date": "2024-02-05T00:00:00Z",
+    "date": "2024-02-05",
     "title": "Service Failure",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     "category": "Telecommunications",
     "decision": "Upheld",
     "company": "Verizon"
   },
   {
     "id": "53a302f2-55da-42f0-bcf4-57ffbcfc7209",
-    "date": "2024-03-22T00:00:00Z",
+    "date": "2024-03-22",
     "title": "Overcharging Issue",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     "category": "Finance",
     "decision": "Upheld",
     "company": "American Express"
   },
   {
     "id": "9e3185df-25a9-4e93-b69d-370bb9e9c1c0",
-    "date": "2024-04-12T00:00:00Z",
+    "date": "2024-04-12",
     "title": "Refund Request",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     "category": "Retail",
     "decision": "Dismissed",
     "company": "Walmart"
   },
   {
     "id": "ce5b4416-6e36-4cde-b7c4-1d3765479c46",
-    "date": "2024-05-05T00:00:00Z",
+    "date": "2024-05-05",
     "title": "Account Dispute",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     "category": "Banking",
     "decision": "Upheld",
     "company": "Chase Bank"
   },
   {
     "id": "1fd65f49-f437-4b36-a85f-e8f3431c253e",
-    "date": "2024-06-18T00:00:00Z",
+    "date": "2024-06-18",
     "title": "Fraud Investigation",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
     "category": "Finance",
     "decision": "Upheld",
     "company": "Mastercard"
+  },
+  {
+    "id": "a7d4eaf3-1a24-4ff9-b34d-eebf02b2928a",
+    "date": "2024-07-05",
+    "title": "Title Dispute",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    "category": "Telecommunications",
+    "decision": "Dismissed",
+    "company": "Verizon"
+  },
+  {
+    "id": "baf6f846-e32b-4202-8f27-df342f373dfb",
+    "date": "2024-07-10",
+    "title": "Title Service Delay",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    "category": "Technology",
+    "decision": "Upheld",
+    "company": "Apple"
+  },
+  {
+    "id": "c2345c1e-4d9f-463d-8f7b-3a2d12e8268d",
+    "date": "2024-07-15",
+    "title": "Late Shipment",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    "category": "Retail",
+    "decision": "Upheld",
+    "company": "Amazon"
+  },
+  {
+    "id": "d1d3e042-19b4-43d7-95e1-3b33a934cd2d",
+    "date": "2024-07-20",
+    "title": "Refund Delayed",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    "category": "Finance",
+    "decision": "Dismissed",
+    "company": "American Express"
+  },
+  {
+    "id": "5e2f742c-79b5-48e7-bf21-47971a9b3e2f",
+    "date": "2024-07-25",
+    "title": "Account Closure",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    "category": "Banking",
+    "decision": "Upheld",
+    "company": "HSBC"
+  },
+  {
+    "id": "42393b5a-6ae9-4bda-ae7e-09ff39ef0b67",
+    "date": "2024-07-30",
+    "title": "Service Issue",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    "category": "Customer Support",
+    "decision": "Upheld",
+    "company": "Uber"
+  },
+  {
+    "id": "742b4a3f-8900-49f2-82ed-45e594450f77",
+    "date": "2024-08-05",
+    "title": "Delivery Delay",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    "category": "Retail",
+    "decision": "Dismissed",
+    "company": "eBay"
+  },
+  {
+    "id": "7ba88e1d-8154-47d6-b8b4-fb7f4c14e024",
+    "date": "2024-08-10",
+    "title": "System Malfunction",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    "category": "Technology",
+    "decision": "Upheld",
+    "company": "Apple"
+  },
+  {
+    "id": "ae5fd49e-3e2f-4142-becf-2ec82c1c67cc",
+    "date": "2024-08-15",
+    "title": "Late Payment",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    "category": "Finance",
+    "decision": "Upheld",
+    "company": "PayPal"
+  },
+  {
+    "id": "127e37bc-d647-4e7d-a7ac-4a0f4dbe2169",
+    "date": "2024-08-20",
+    "title": "Transaction Dispute",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    "category": "Banking",
+    "decision": "Dismissed",
+    "company": "Barclays Bank Plc"
+  },
+  {
+    "id": "a875b6dc-83f2-4df3-a2b4-b17268b112f8",
+    "date": "2024-08-25",
+    "title": "Technical Issue",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    "category": "Technology",
+    "decision": "Upheld",
+    "company": "Samsung"
+  },
+  {
+    "id": "f5cc6b9d-9f57-4c82-8f35-68789f18bc37",
+    "date": "2024-08-30",
+    "title": "Insurance Claim Rejected",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    "category": "Insurance",
+    "decision": "Dismissed",
+    "company": "Axa Insurance Ltd"
+  },
+  {
+    "id": "e1d3cbd8-c2df-421f-a728-0f71506dfcd1",
+    "date": "2024-09-05",
+    "title": "Billing Problem",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    "category": "Telecommunications",
+    "decision": "Upheld",
+    "company": "Vodafone Group"
+  },
+  {
+    "id": "4bda4cd6-89a4-4f7d-b27d-94f17b95e8e7",
+    "date": "2024-09-10",
+    "title": "Delivery Mishap",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    "category": "Retail",
+    "decision": "Upheld",
+    "company": "Amazon"
+  },
+  {
+    "id": "ce0d3080-e65e-464f-a295-431002fb9204",
+    "date": "2024-09-15",
+    "title": "Payment Dispute",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    "category": "Finance",
+    "decision": "Upheld",
+    "company": "Mastercard"
+  },
+  {
+    "id": "c9a9870e-9ec2-4a9e-8f25-8b73598727d4",
+    "date": "2024-09-20",
+    "title": "Fraud Investigation",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    "category": "Banking",
+    "decision": "Upheld",
+    "company": "Chase Bank"
+  },
+  {
+    "id": "ccde218f-0d12-47ab-90e0-e2e40db71b67",
+    "date": "2024-09-25",
+    "title": "Unauthorized Charge",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    "category": "Finance",
+    "decision": "Upheld",
+    "company": "American Express"
+  },
+  {
+    "id": "8677fb21-9f69-4fbc-9fb3-7cf3683d4af5",
+    "date": "2024-09-30",
+    "title": "Legal Dispute",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+    "category": "Legal",
+    "decision": "Dismissed",
+    "company": "Microsoft"
   }
 ]
