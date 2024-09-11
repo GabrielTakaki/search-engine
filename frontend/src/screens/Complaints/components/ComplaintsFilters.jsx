@@ -107,7 +107,7 @@ function ComplaintsFilters() {
             onClearHandled={handleClearComplete}
           />
           <DatePicker
-            defaultValue={dayjs(searchParams.get("date"))}
+            defaultValue={searchParams.get("date") ? dayjs(searchParams.get("date")) : null}
             name="date"
             clear={clearFilters}
             onClearHandled={handleClearComplete}

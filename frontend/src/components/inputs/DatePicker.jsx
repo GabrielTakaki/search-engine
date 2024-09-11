@@ -52,7 +52,7 @@ DatePicker.propTypes = {
   name: PropTypes.string,
   placeholder: PropTypes.string,
   clear: PropTypes.bool,
-  defaultValue: PropTypes.string,
+  defaultValue: PropTypes.object,
   onClearHandled: PropTypes.func
 };
 

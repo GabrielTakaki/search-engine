@@ -62,7 +62,7 @@ Select.propTypes = {
       value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
     })
   ).isRequired,
-  defaultValue: PropTypes.oneOf([PropTypes.string, PropTypes.number]),
+  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onChange: PropTypes.func,
   value: PropTypes.string,
   name: PropTypes.string,
