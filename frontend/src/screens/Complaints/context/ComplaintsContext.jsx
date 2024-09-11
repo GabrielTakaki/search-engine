@@ -4,6 +4,17 @@ import { getComplaints } from "../services/getComplaints";
 import PropTypes from "prop-types";
 import dayjs from "dayjs";
 
+function getSearchParams() {
+  const searchParams = new URLSearchParams(window.location.search);
+  return {
+    title: searchParams.get("title"),
+    category: searchParams.get("category"),
+    company: searchParams.get("company"),
+    decision: searchParams.get("decision"),
+    date: searchParams.get("date") ? dayjs.utc(searchParams.get("date")).format("YYYY-MM-DD") : ""
+  };
+}
+
 function normalizeData(data) {
   return data.reduce(
     (acc, item) => {
@@ -18,18 +29,9 @@ function normalizeData(data) {
 const ComplaintsContext = createContext(null);
 
 function ComplaintsProvider({ children }) {
-  const searchParams = new URLSearchParams(window.location.search);
-  const title = searchParams.get("title");
-  const category = searchParams.get("category");
-  const company = searchParams.get("company");
-  const decision = searchParams.get("decision");
-  const date = searchParams.get("date")
-    ? dayjs.utc(searchParams.get("date")).format("YYYY-MM-DD")
-    : "";
-
   const [complaints, setComplaints] = useState({ ids: [], entities: {} });
   const [pagination, setPagination] = useState({
-    page: 1,
+    currentPage: 1,
     perPage: 5,
     total: 0,
     totalPages: 0,
@@ -44,6 +46,10 @@ function ComplaintsProvider({ children }) {
     }
   });
 
+  const { title, category, company, decision, date } = useMemo(getSearchParams, [
+    window.location.search
+  ]);
+
   const handleFetchComplaints = useCallback(
     (props) => {
       fetchComplaints({
@@ -56,38 +62,28 @@ function ComplaintsProvider({ children }) {
         sortBy: pagination.sortBy
       });
     },
-    [title, category, decision, date, category, pagination.sortBy]
+    [title, category, decision, date, pagination.sortBy]
   );
 
-  const handlePaginationChange = useCallback((page) => {
-    setPagination((prev) => ({ ...prev, page }));
-  }, []);
-
-  const handlePerPageChange = useCallback((perPage) => {
-    setPagination((prev) => ({ ...prev, perPage }));
-  }, []);
-
-  const handleSortingChange = useCallback((sortBy) => {
-    setPagination((prev) => ({ ...prev, sortBy }));
+  const updatePagination = useCallback((path, data) => {
+    setPagination((prev) => ({ ...prev, currentPage: 1, [path]: data }));
   }, []);
 
   useEffect(() => {
     handleFetchComplaints({
-      page: pagination.page,
+      page: pagination.currentPage,
       perPage: pagination.perPage,
       sortBy: pagination.sortBy
     });
-  }, [pagination.page, pagination.perPage, pagination.sortBy]);
+  }, [pagination.currentPage, pagination.perPage, pagination.sortBy]);
 
   const value = useMemo(() => {
     return {
       complaints,
       loading: isFetchingComplaints,
       pagination,
-      handlePaginationChange,
-      handleFetchComplaints,
-      handlePerPageChange,
-      handleSortingChange
+      updatePagination,
+      handleFetchComplaints
     };
   }, [complaints, pagination, isFetchingComplaints]);
 
