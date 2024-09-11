@@ -1,5 +1,6 @@
-from http.client import HTTPException
 from typing import Optional, Union
+
+from backend.app.model.complaints import Complaints as ComplaintsModel
 from backend.app.repository.complaints import ComplaintsRepository
 from datetime import datetime
 
@@ -7,30 +8,26 @@ class ComplaintsService:
     def __init__(self, repository: ComplaintsRepository):
         self.repository = repository
 
-    def paginate_complaints(
+    def paginate(
         self,
         page: int = 1,
         per_page: int = 10,
-        title: Optional[str] = None,
-        company: Optional[str] = None,
-        decision: Optional[str] = None,
-        date: Optional[str] = None,
-        category: Optional[str] = None,
-        sort_by: Optional[str] = None
+        sort_by: Optional[str] = None,
+        filters: ComplaintsModel = ComplaintsModel()
     ) -> dict[str, Union[list[dict], int]]:
         complaints = self.repository.get_complaints()
 
-        if title:
-            complaints = [c for c in complaints if title.lower() in c.get('title', '').lower()]
-        if company:
-            complaints = [c for c in complaints if c.get('company', '').lower() == company.lower()]
-        if decision:
-            complaints = [c for c in complaints if c.get('decision', '').lower() == decision.lower()]
-        if date:
-            date_obj = datetime.fromisoformat(date)
+        if filters.title:
+            complaints = [c for c in complaints if filters.title.lower() in c.get('title', '').lower()]
+        if filters.company:
+            complaints = [c for c in complaints if c.get('company', '').lower() == filters.company.lower()]
+        if filters.decision:
+            complaints = [c for c in complaints if c.get('decision', '').lower() == filters.decision.lower()]
+        if filters.date:
+            date_obj = datetime.fromisoformat(filters.date)
             complaints = [c for c in complaints if datetime.fromisoformat(c.get('date', '')) == date_obj]
-        if category:
-            complaints = [c for c in complaints if c.get('category', '').lower() == category.lower()]
+        if filters.category:
+            complaints = [c for c in complaints if c.get('category', '').lower() == filters.category.lower()]
 
         if sort_by:
             if sort_by in ['title', 'company', 'decision', 'category']:

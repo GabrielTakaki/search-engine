@@ -7,8 +7,6 @@ class ComplaintsRepository:
         self.mock_file_path = os.path.join(os.getcwd().split("app")[0], 'mock', 'complaints.json')
 
     def _load_data(self) -> List[Dict]:
-        print(f"Mock file path: {self.mock_file_path}")
-
         if not os.path.exists(self.mock_file_path):
             raise FileNotFoundError(f"Mock file not found: {self.mock_file_path}")
 
