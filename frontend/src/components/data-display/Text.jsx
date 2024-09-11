@@ -3,14 +3,12 @@ import { styled } from "styled-components";
 import PropTypes from "prop-types";
 import { COLORS } from "../../consts/colors";
 
-const StyledText = styled.span.attrs((props) => ({
-  "data-text-transform": props.textTransform
-}))`
+const StyledText = styled.span`
   font-size: ${(props) => `${{ sm: "12px", md: "14px", lg: "16px" }[props.size]}`};
-  font-weight: ${(props) => (props.weight === "bold" ? 600 : 400)};
-  color: ${(props) => props.color};
-  text-align: ${(props) => props.align};
-  text-transform: ${(props) => props["data-text-transform"]};
+  font-weight: ${(props) => (props.$weight === "bold" ? 600 : 400)};
+  color: ${(props) => props.$color};
+  text-align: ${(props) => props.$align};
+  text-transform: ${(props) => props.$textTransform};
 `;
 
 function Text({
@@ -19,10 +17,17 @@ function Text({
   weight = "regular",
   color = COLORS.neutral[900],
   align = "left",
+  textTransform,
   ...props
 }) {
   return (
-    <StyledText color={color} align={align} weight={weight} size={size} {...props}>
+    <StyledText
+      $color={color}
+      $align={align}
+      $weight={weight}
+      $textTransform={textTransform}
+      $size={size}
+      {...props}>
       {label}
     </StyledText>
   );

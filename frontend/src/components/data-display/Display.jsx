@@ -5,9 +5,9 @@ import { COLORS } from "../../consts/colors";
 
 const StyledDisplay = styled.span`
   font-size: ${(props) => `${{ sm: "20px", md: "26px", lg: "28px", xl: "42px" }[props.size]}`};
-  font-weight: ${(props) => (props.weight === "bold" ? 600 : 400)};
-  color: ${(props) => props.color};
-  text-align: ${(props) => props.align};
+  font-weight: ${(props) => (props.$weight === "bold" ? 600 : 400)};
+  color: ${(props) => props.$color};
+  text-align: ${(props) => props.$align};
 `;
 
 function Display({
@@ -19,7 +19,7 @@ function Display({
   ...props
 }) {
   return (
-    <StyledDisplay color={color} align={align} weight={weight} size={size} {...props}>
+    <StyledDisplay $color={color} $align={align} $weight={weight} size={size} {...props}>
       {label}
     </StyledDisplay>
   );
