@@ -29,13 +29,7 @@ const Row = styled.div`
 `;
 
 function ComplaintsList() {
-  const {
-    complaints,
-    pagination,
-    handlePaginationChange,
-    handlePerPageChange,
-    handleSortingChange
-  } = useComplaints();
+  const { complaints, pagination, updatePagination } = useComplaints();
 
   return (
     <Container>
@@ -44,12 +38,13 @@ function ComplaintsList() {
           <Display label="Results" weight="bold" size="lg" />
           <Text
             color={COLORS.neutral[500]}
-            label={`Showing results of ${pagination.page} of ${pagination.totalPages} of ${pagination.total}`}
+            label={`Showing results of ${pagination.currentPage} of ${pagination.totalPages} of ${pagination.total}`}
           />
         </Column>
         <Row>
           <Select
-            onChange={(e) => handlePerPageChange(e.target.value)}
+            defaultValue={5}
+            onChange={(e) => updatePagination("perPage", e.target.value)}
             options={[
               { value: 5, label: "5 per page" },
               { value: 10, label: "10 per page" },
@@ -58,7 +53,7 @@ function ComplaintsList() {
             ]}
           />
           <Select
-            onChange={(e) => handleSortingChange(e.target.value)}
+            onChange={(e) => updatePagination("sortBy", e.target.value)}
             options={[
               { value: "title", label: "Title" },
               { value: "date", label: "Date" },
@@ -73,7 +68,7 @@ function ComplaintsList() {
       <List
         pagination={pagination}
         datasource={complaints.ids || []}
-        onChange={handlePaginationChange}
+        onChange={(page) => updatePagination("currentPage", page)}
         renderItems={(id) => <ComplaintsListItem complaintId={id} />}
         keyExtractor={(id) => id}
       />

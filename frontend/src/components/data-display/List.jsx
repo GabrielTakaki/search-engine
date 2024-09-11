@@ -64,7 +64,11 @@ function List({
       </MuiList>
       {pagination && !!datasource.length && (
         <PaginationWrapper>
-          <Pagination onChange={handlePageChange} count={pagination.totalPages} />
+          <Pagination
+            page={pagination.currentPage}
+            onChange={handlePageChange}
+            count={pagination.totalPages}
+          />
         </PaginationWrapper>
       )}
     </Container>
@@ -112,7 +116,7 @@ List.propTypes = {
   loading: PropTypes.bool,
   onChange: PropTypes.func,
   pagination: PropTypes.shape({
-    page: PropTypes.number.isRequired,
+    currentPage: PropTypes.number.isRequired,
     perPage: PropTypes.number.isRequired,
     total: PropTypes.number.isRequired,
     totalPages: PropTypes.number.isRequired
