@@ -15,7 +15,8 @@ class ComplaintsService:
         company: Optional[str] = None,
         decision: Optional[str] = None,
         date: Optional[str] = None,
-        category: Optional[str] = None
+        category: Optional[str] = None,
+        sort_by: Optional[str] = None
     ) -> dict[str, Union[list[dict], int]]:
         complaints = self.repository.get_complaints()
 
@@ -30,6 +31,12 @@ class ComplaintsService:
             complaints = [c for c in complaints if datetime.fromisoformat(c.get('date', '')) == date_obj]
         if category:
             complaints = [c for c in complaints if c.get('category', '').lower() == category.lower()]
+
+        if sort_by:
+            if sort_by in ['title', 'company', 'decision', 'category']:
+                complaints.sort(key=lambda c: c.get(sort_by, '').lower())
+            elif sort_by == 'date':
+                complaints.sort(key=lambda c: datetime.fromisoformat(c.get('date', '')), reverse=True)
 
         total_items = len(complaints)
 
