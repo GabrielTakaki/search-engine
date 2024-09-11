@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { styled } from "styled-components";
 import TextField from "../../../components/inputs/TextField";
 import Button from "../../../components/inputs/Button";
@@ -6,6 +6,7 @@ import Select from "../../../components/inputs/Select";
 import { useComplaints } from "../context/ComplaintsContext";
 import DatePicker from "../../../components/inputs/DatePicker";
 import Form from "../../../components/general/Form";
+import dayjs from "dayjs";
 
 const Container = styled.section`
   display: flex;
@@ -21,7 +22,7 @@ const Row = styled.div`
 `;
 
 function ComplaintsFilters() {
-  const { handleFetchComplaints, pagination } = useComplaints();
+  const { handleFetchComplaints, pagination, updatePagination } = useComplaints();
   const formRef = useRef(null);
   const searchParams = new URLSearchParams(window.location.search);
 
@@ -39,6 +40,7 @@ function ComplaintsFilters() {
       const newUrl = `${window.location.pathname}?${searchParams.toString()}`;
       window.history.pushState({}, "", newUrl);
 
+      updatePagination("currentPage", 1);
       handleFetchComplaints(values);
     },
     [pagination.sortBy]
@@ -56,15 +58,11 @@ function ComplaintsFilters() {
     setClearFilters(false);
   };
 
-  useEffect(() => {
-    window.history.pushState({}, "", window.location.pathname);
-  }, []);
-
   return (
     <Form ref={formRef} onSubmit={handleSubmitFilter}>
       <Container>
         <Row>
-          <TextField name="title" />
+          <TextField name="title" defaultValue={searchParams.get("title")} />
           <Button type="submit" label="Search" size="lg" />
         </Row>
         <Row>
@@ -80,10 +78,12 @@ function ComplaintsFilters() {
             placeholder="Category"
             onClearHandled={handleClearComplete}
             clear={clearFilters}
+            defaultValue={searchParams.get("category")}
           />
           <Select
             placeholder="Decision"
             name="decision"
+            defaultValue={searchParams.get("decision")}
             clear={clearFilters}
             options={[
               { label: "-", value: "" },
@@ -95,6 +95,7 @@ function ComplaintsFilters() {
           <Select
             placeholder="Company"
             name="company"
+            defaultValue={searchParams.get("company")}
             clear={clearFilters}
             options={[
               { label: "-", value: "" },
@@ -105,7 +106,12 @@ function ComplaintsFilters() {
             ]}
             onClearHandled={handleClearComplete}
           />
-          <DatePicker name="date" clear={clearFilters} onClearHandled={handleClearComplete} />
+          <DatePicker
+            defaultValue={dayjs(searchParams.get("date"))}
+            name="date"
+            clear={clearFilters}
+            onClearHandled={handleClearComplete}
+          />
         </Row>
         <Row>
           <Button onClick={handleClearFilters} variant="ghost" label="Clear Filters" />

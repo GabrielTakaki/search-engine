@@ -18,12 +18,18 @@ const StyledTextField = styled(MuiTextField)`
   }
 `;
 
-function TextField({ icon = <SearchOutlinedIcon />, placeholder = "Search", ...props }) {
+function TextField({
+  defaultValue,
+  icon = <SearchOutlinedIcon />,
+  placeholder = "Search",
+  ...props
+}) {
   const coloredIcon = React.cloneElement(icon, { style: { color: COLORS.neutral[500] } });
 
   return (
     <StyledTextField
       type="text"
+      defaultValue={defaultValue}
       fullWidth
       placeholder={placeholder}
       InputProps={
@@ -43,6 +49,7 @@ TextField.propTypes = {
   icon: PropTypes.node,
   onChange: PropTypes.func,
   value: PropTypes.string,
+  defaultValue: PropTypes.string,
   placeholder: PropTypes.string,
   name: PropTypes.string
 };

@@ -18,8 +18,8 @@ const StyledDatePicker = styled(MuiDatePicker)`
   }
 `;
 
-function DatePicker({ clear, onClearHandled, value, onChange, ...props }) {
-  const [selectedValue, setSelectedValue] = useState(value);
+function DatePicker({ clear, defaultValue, onClearHandled, value, onChange, ...props }) {
+  const [selectedValue, setSelectedValue] = useState(value || defaultValue);
 
   useEffect(() => {
     if (clear) {
@@ -52,6 +52,7 @@ DatePicker.propTypes = {
   name: PropTypes.string,
   placeholder: PropTypes.string,
   clear: PropTypes.bool,
+  defaultValue: PropTypes.string,
   onClearHandled: PropTypes.func
 };
 
