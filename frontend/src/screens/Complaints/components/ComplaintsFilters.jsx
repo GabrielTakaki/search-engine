@@ -43,7 +43,7 @@ function ComplaintsFilters() {
       updatePagination("currentPage", 1);
       handleFetchComplaints(values);
     },
-    [pagination.sortBy]
+    [pagination.sortBy, pagination.perPage]
   );
 
   const handleClearFilters = useCallback(() => {

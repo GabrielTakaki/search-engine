@@ -59,10 +59,11 @@ function ComplaintsProvider({ children }) {
         decision,
         date,
         ...props,
-        sortBy: pagination.sortBy
+        sortBy: pagination.sortBy,
+        perPage: pagination.perPage
       });
     },
-    [title, category, decision, date, pagination.sortBy]
+    [title, category, decision, date, pagination.sortBy, pagination.perPage]
   );
 
   const updatePagination = useCallback((path, data) => {
