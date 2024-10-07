@@ -1,9 +1,6 @@
 # Project Overview
 
 This project is a simple full-stack web application structured with a frontend built in React and a backend using FastAPI.
-Your goal is to implement a single-page search engine as shown in the Figma design.
-
-**The backend task is optional** and accounts for ~5-10% of the final score, so please focus on the frontend.
 
 ## Project Structure
 
@@ -25,11 +22,6 @@ The frontend is built with:
 - **React.js** (latest version)
 - **Styled-components** for styling
 
-feel free to add any package, but please focus on using styled-components for css.
-
-**You should focus on implementing the frontend as per the design provided above, please focus on the search engine 
-functionalities. The sidebar, header and footer can simply be a placeholder with icons that does not do anything.**
-
 ### How to Run the Frontend
 
 1. Navigate to the `frontend` directory:
@@ -49,14 +41,10 @@ functionalities. The sidebar, header and footer can simply be a placeholder with
 
 The React app should now be running at `http://localhost:3000`.
 
-## Backend (OPTIONAL)
+## Backend
 
 The backend is built with:
 - **FastAPI**
-
-
-There's an *hello world* endpoint initiated, as an optional task you can create another
-endpoint and retrieve a **hardcoded list of search results. Please implement the code as production-ready!**
 
 ### How to Run the Backend
 
@@ -85,8 +73,4 @@ endpoint and retrieve a **hardcoded list of search results. Please implement the
    python main.py
    ```
 
-The FastAPI server should now be running at `http://0.0.0.0:3101`, and you can access the "Hello World" endpoint at `http://0.0.0.0:3101`.
-
-## Additional Notes
-
-Feel free to reach out if you encounter any issues or have questions!
+The FastAPI server should now be running at `http://0.0.0.0:3101`.
